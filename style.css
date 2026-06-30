@@ -1,0 +1,168 @@
+:root{
+    --cinza_claro: rgb(172, 175, 175);
+    --azul: rgb(22, 84, 255);
+    --azul_hover: rgb(12, 54, 170);
+    --border: rgb(90, 89, 89);
+    --red_excluir: rgb(230, 0, 11);
+    --red_hover: rgb(155, 3, 10);
+    --background: rgba(245, 245, 245, 0.884);
+}
+
+h1{
+    justify-content: center;
+    text-align: center;
+}
+.boxbody{
+    margin-left: 5%;
+    margin-right: 50%;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+body{
+    background-color: rgba(245, 245, 245, 0.884);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    max-height: 100vh;
+    z-index: 1;
+}
+ol{
+    background-color: rgb(172, 175, 175);
+    margin-right: 300px;
+    border: 2px solid var(--border);
+}
+li{
+    border-bottom: 1px solid;
+}
+.crud_bar{
+    justify-content: right;
+    display: flex;
+    flex-direction: row;
+    bottom: 50px;
+    position: fixed;
+    right: 50px;
+}
+#new_contact {
+    background-color: var(--azul);
+    border: none;
+    border-radius: 5px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: white;
+    cursor: pointer;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: var(--azul);
+}
+.window_cadastro{
+    justify-items: start;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    padding: 50px;
+    border: 3px solid var(--azul);
+    border-radius: 10px;
+}
+
+#popup{
+    border: none;
+    border-radius: 10px;
+}
+#popup::backdrop{
+    background-color: var(--background);
+}
+
+#nome, #tel, #email{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 50px;
+    background-color: transparent;
+    border-bottom: 2px solid var(--azul);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;   
+}
+#nome:focus, #tel:focus, #email:focus{
+    border-bottom:2px solid var(--azul_hover);
+}
+
+#buttonsend {
+    border: none;
+    background-color: var(--azul);
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#new_contact:hover, #buttonsend:hover{
+    background-color: var(--azul_hover);
+}
+#text{
+    font-size: 20px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+#nome::placeholder, #tel::placeholder, #email::placeholder, #navbar::placeholder{
+    font-size: 15px;
+}
+#btneditar, .btnexcluir{
+    justify-content: right;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    margin-top: 3px;
+}
+.btnexcluir{
+    background-color: var(--red_excluir);
+    border-radius: 5px;
+    color: white;
+}
+#btneditar{
+    background-color: var(--azul);
+    color: white;
+    border-radius: 5px;
+}
+#btneditar:hover{
+    background-color: var(--azul_hover);   
+}
+.btnexcluir:hover{
+    background-color: var(--red_hover);
+
+}
+#navbar{
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.container{
+    display: grid;
+    flex-direction: column;
+    margin-right: 500px;
+}
+.seletores{
+    flex-direction: column;
+    display: flex;
+    margin-top: 30px;  
+}
+.contact{
+    border-bottom: 2px dashed var(--border);
+    flex-direction: row;
+    display: flex;
+    padding-left: 20px;
+}
