@@ -7,7 +7,6 @@
     --red_hover: rgb(155, 3, 10);
     --background: rgba(245, 245, 245, 0.884);
 }
-
 h1{
     justify-content: center;
     text-align: center;
@@ -70,7 +69,6 @@ li{
     border: 3px solid var(--azul);
     border-radius: 10px;
 }
-
 #popup{
     border: none;
     border-radius: 10px;
@@ -78,7 +76,6 @@ li{
 #popup::backdrop{
     background-color: var(--background);
 }
-
 #nome, #tel, #email{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -95,7 +92,6 @@ li{
 #nome:focus, #tel:focus, #email:focus{
     border-bottom:2px solid var(--azul_hover);
 }
-
 #buttonsend {
     border: none;
     background-color: var(--azul);
@@ -117,7 +113,7 @@ li{
 #nome::placeholder, #tel::placeholder, #email::placeholder, #navbar::placeholder{
     font-size: 15px;
 }
-#btneditar, .btnexcluir{
+.btneditar, .btnexcluir{
     justify-content: right;
     height: 40px;
     width: 100px;
@@ -131,12 +127,12 @@ li{
     border-radius: 5px;
     color: white;
 }
-#btneditar{
+.btneditar{
     background-color: var(--azul);
     color: white;
     border-radius: 5px;
 }
-#btneditar:hover{
+.btneditar:hover{
     background-color: var(--azul_hover);   
 }
 .btnexcluir:hover{
@@ -165,4 +161,5 @@ li{
     padding-left: 20px;
     border: 2px solid var(--border);
     border-radius: 5px;
+    max-width: 1000px;
 }
