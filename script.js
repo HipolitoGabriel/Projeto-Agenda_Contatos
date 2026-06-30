@@ -7,12 +7,13 @@ const dados = document.querySelector(".boxbody")
 const limpar = document.querySelector("#limpar")
 const botoes = document.querySelectorAll(".btnexcluir")
 const tam = document.querySelector("#tam")
+const pesquisa = document.querySelector("#navbar")
 
 button.addEventListener("click", open_popup);
-buttonsend.addEventListener("click", cadastrar)
+buttonsend.addEventListener("click", verificar)
 
+const tabelaBody = document.getElementById("corpoTabela"); 
 
-const tabelaBody = document.getElementById("corpoTabela");   
 function atualizarTabela(contato, indice) {
     
         const linhaHTML = `
@@ -28,23 +29,35 @@ function atualizarTabela(contato, indice) {
             </div>
             <div class="seletores">
                 <button id="btneditar">Editar</button>
-                <button class="btnexcluir" data-indice="${indice}">Excluir</button>
+                <button class="btnexcluir" data-id="${indice}">Excluir</button>
             </div>
         </div>
         `;
         dados.innerHTML += linhaHTML;    
 }
-
 function open_popup() {
     popup.showModal()
 }
-const email = document.getElementById("email").value.trim()
-
-
-function cadastrar(){
+function validar_nome(nome) {
+    return nome.length >= 3
+}
+function validar_email(email) {
+    return email.includes("@") && email.includes(".")
+}
+function validar_num(tel) {
+    return /^\(\d{2}\) \d{9}$/.test(tel);
+}
+function verificar(){
     const nome = document.getElementById("nome").value
     const tel = document.getElementById("tel").value
     const email = document.getElementById("email").value.trim()
+    if (validar_nome(nome) === true && validar_email(email) === true && validar_num(tel) === true){
+        cadastrar(nome, tel, email)
+    } else {
+        alert("erro no nome, tel ou email");
+    }
+}
+function cadastrar(nome, tel, email){
     const novo = {
         nome,
         email,
@@ -59,15 +72,31 @@ function cadastrar(){
     document.getElementById("tel").value = "";
     document.getElementById("email").value = "";
 }
-
-function excluir(){
+pesquisa.addEventListener("input", pesquisar)
+function pesquisar() {
+    const foco = pesquisa.value.toLowerCase()
+    dados.innerHTML = ""
+    const filtadros = lista_contatos.filter((contato) => contato.nome.startsWith(foco))
+        filtadros.forEach((contato, indice) => {
+            const contato_filtadro = `
+        <div class="contact">
+            <div class="container">
+                <h2>${contato.nome}</h3>
+                <ul>
+                    <li>${contato.tel}</li>
+                    <li>${contato.email}</li>
+                    <li>${contato.descricao}</li>
+                </ul>
+            </div>
+            <div class="seletores">
+                <button id="btneditar">Editar</button>
+                <button class="btnexcluir" data-id="${indice}">Excluir</button>
+            </div>
+        </div>
+        `;
+        dados.innerHTML += contato_filtadro
+        })
+}
+function editar() {
     
-    lista_contatos.splice(teste.id)
-}
-
-function validarEmail(email) {
-  return email.includes("@") && email.includes(".");
-}
-function validarNome(nome) {
-  return nome.length >= 3;
 }

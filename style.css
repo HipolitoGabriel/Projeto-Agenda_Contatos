@@ -15,7 +15,6 @@ h1{
 .boxbody{
     margin-left: 5%;
     margin-right: 50%;
-    border: 2px solid var(--border);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -149,7 +148,6 @@ li{
     border-radius: 5px;
     margin-top: 20px;
 }
-
 .container{
     display: grid;
     flex-direction: column;
@@ -165,4 +163,6 @@ li{
     flex-direction: row;
     display: flex;
     padding-left: 20px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
 }
