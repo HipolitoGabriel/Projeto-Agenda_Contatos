@@ -9,6 +9,12 @@ const pesquisa = document.querySelector("#navbar")
 
 button.addEventListener("click", open_popup);
 buttonsend.addEventListener("click", verificar)
+popup.addEventListener("keydown", (e) => {
+    if(e.key === "Enter") {
+        e.preventDefault()
+        verificar() 
+    }   
+})
 dados.addEventListener("click", excluir)
 dados.addEventListener("click", editar)
 
@@ -17,7 +23,7 @@ const tabelaBody = document.getElementById("corpoTabela");
 function atualizarTabela(contato, indice) {
     
         const linhaHTML = `
-       <div class="contact" data-id="${indice}">
+        <div class="contact" data-id="${indice}">
                 <div class="container">
                 <h2>${contato.nome}</h3>
                 <ul>
@@ -52,8 +58,15 @@ function verificar() {
     const email = document.getElementById("email").value.trim()
     if (validar_nome(nome) === true && validar_email(email) === true && validar_num(tel) === true){
         cadastrar(nome, tel, email) 
-    } else {
-        alert("erro no nome, tel ou email");
+    }
+    if (validar_nome(nome) != true){
+        alert("nome precisa de no minimo 3 caracteres")
+    }
+    if (validar_num(tel) != true){
+        alert("numero precisa estar no padrao porra")
+    }
+    if (validar_email(email) != true){
+        alert("email precisa ter @ e .")
     }
 }
 function cadastrar(nome, tel, email){
@@ -118,5 +131,7 @@ function editar(e) {
         nome.value = card_contato.nome
         tel.value = card_contato.tel
         email.value = card_contato.email
+        if(click.closest(".seletores"))
+            alert("entrou no botao")
     }
 }
