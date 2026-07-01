@@ -68,6 +68,7 @@ function verificar() {
     if (validar_email(email) != true){
         alert("email precisa ter @ e .")
     }
+
 }
 function cadastrar(nome, tel, email){
     const novo = {
@@ -87,10 +88,10 @@ pesquisa.addEventListener("input", pesquisar)
 function pesquisar() {
     const foco = pesquisa.value.toLowerCase()
     dados.innerHTML = ""
-    const filtadros = lista_contatos.filter((contato) => contato.nome.startsWith(foco))
+    const filtadros = lista_contatos.filter((contato) => contato.nome.toLowerCase().startsWith(foco))
         filtadros.forEach((contato, indice) => {
             const contato_filtadro = `
-       <div class="contact" data-id="${indice}">
+        <div class="contact" data-id="${indice}">
                 <div class="container">
                 <h2>${contato.nome}</h3>
                 <ul>
@@ -128,10 +129,17 @@ function editar(e) {
         const id = Number(click.closest(".contact").dataset.id)
         card_contato = lista_contatos[id]
         popup.showModal()
-        nome.value = card_contato.nome
-        tel.value = card_contato.tel
-        email.value = card_contato.email
-        if(click.closest(".seletores"))
-            alert("entrou no botao")
+            nome.value = card_contato.nome
+            tel.value = card_contato.tel
+            email.value = card_contato.email
+            const novo_nome = document.getElementById("nome").value
+            const novo_tel = document.getElementById("tel").value
+            const novo_email = document.getElementById("email").value
+            lista_contatos[id] = {
+                nome: novo_nome,
+                email: novo_email,
+                tel: novo_tel
+            }
+        atualizarTabela()
     }
 }
