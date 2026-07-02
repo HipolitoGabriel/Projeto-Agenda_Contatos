@@ -20,16 +20,16 @@
         
     </div>
     <dialog id="popup">
-        <div class="window_cadastro">
-            <label id="text" for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite o nome completo">
-            <label id="text" for="tel">Telefone:</label>
-            <input type="tel" id="tel" name="tel" placeholder="(XX) XXXXX-XXXX">
-            <label id="text" for="email">Email aqui:</label>
-            <input type="text" id="email" name="email" placeholder="email@exemplo.com">
-            <br>
-            <button type="submit" id="buttonsend">Cadastrar</button>
-        </div>
+            <form action="" id="form_contato" class="window_cadastro">
+                <label id="text" for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Digite o nome completo">
+                <label id="text" for="tel">Telefone:</label>
+                <input type="tel" id="tel" name="tel" required placeholder="(XX) XXXXX-XXXX">
+                <label id="text" for="email">Email aqui:</label>
+                <input type="text" id="email" name="email" required placeholder="email@exemplo.com">
+                <br>
+                <button type="submit" id="buttonsend">Cadastrar</button>
+            </form>
     </dialog>
     <p id="tam"></p>
     <div class="crud_bar">

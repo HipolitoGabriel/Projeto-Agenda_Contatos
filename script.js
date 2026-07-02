@@ -24,7 +24,7 @@ function atualizarTabela(contato, indice) {
     
         const linhaHTML = `
         <div class="contact" data-id="${indice}">
-                <div class="container">
+            <div class="container">
                 <h2>${contato.nome}</h3>
                 <ul>
                     <li>${contato.tel}</li>
