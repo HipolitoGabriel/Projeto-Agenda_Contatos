@@ -61,13 +61,10 @@ function verificar() {
         cadastrar(nome, tel, email) 
     }
     if (validar_nome(nome) != true){
-        msg.classList.add("msg_erro")
-        msg.textContent = "nome precisa de no minimo 3 caracteres"
-        
-        alert("nome precisa de no minimo 3 caracteres")
+        alert("nome precisa ter no minimo 3 caracteres")
     }
     if (validar_num(tel) != true){
-        alert("numero precisa estar no padrao porra")
+        alert("telefone precisa estar no formato (XX) XXXXX-XXXX")
     }
     if (validar_email(email) != true){
         alert("email precisa ter @ e .")
@@ -119,7 +116,6 @@ function excluir(e) {
         const div_del = click.closest(".contact")
         const id = Number(div_del.dataset.id)
         div_del.remove()
-        tam.textContent = lista_contatos.length
         lista_contatos.splice(id, 1)
     }
 }
@@ -143,6 +139,25 @@ function editar(e) {
                 email: novo_email,
                 tel: novo_tel
             }
-        atualizarTabela()
+        lista_contatos.forEach((contato) => {
+            const contato_filtadro = `
+        <div class="contact" data-id="${indice}">
+                <div class="container">
+                <h2>${contato.nome}</h3>
+                <ul>
+                    <li>${contato.tel}</li>
+                    <li>${contato.email}</li>
+                    <li>${contato.descricao}</li>
+                </ul>
+            </div>
+            <div class="seletores">
+                <button class="btneditar">Editar</button>
+                <button class="btnexcluir">Excluir</button>
+            </div>
+        </div>
+        `;
+            dados.innerHTML += contato_filtadro
+        })
     }
+    
 }

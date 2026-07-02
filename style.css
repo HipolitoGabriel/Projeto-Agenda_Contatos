@@ -162,3 +162,12 @@ li{
     border-radius: 5px;
     max-width: 1000px;
 }
+.msg_error{
+    align-self: center;
+    color: white;
+    font-size: 20px;
+    padding-bottom: 10px;
+    background-color: var(--red_excluir);
+    border-radius: 5px;
+    padding: 10px;
+}
