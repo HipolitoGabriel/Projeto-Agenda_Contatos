@@ -6,41 +6,34 @@
     --red_excluir: rgb(230, 0, 11);
     --red_hover: rgb(155, 3, 10);
     --background: rgba(245, 245, 245, 0.884);
-}
-h1{
+}h1{
     justify-content: center;
     text-align: center;
-}
-.boxbody{
+}.boxbody{
     margin-left: 5%;
     margin-right: 50%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-}
-body{
+}body{
     background-color: rgba(245, 245, 245, 0.884);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     max-height: 100vh;
     z-index: 1;
-}
-ol{
+}ol{
     background-color: rgb(172, 175, 175);
     margin-right: 300px;
     border: 2px solid var(--border);
-}
-li{
+}li{
     border-bottom: 1px solid;
-}
-.crud_bar{
+}.crud_bar{
     justify-content: right;
     display: flex;
     flex-direction: row;
     bottom: 50px;
     position: fixed;
     right: 50px;
-}
-#new_contact {
+}#new_contact {
     background-color: var(--azul);
     border: none;
     border-radius: 5px;
@@ -50,16 +43,14 @@ li{
     padding-top: 20px;
     color: white;
     cursor: pointer;
-}
-.head{
+}.head{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 50px;
     margin-right: 50px;
     color: var(--azul);
-}
-.window_cadastro{
+}.window_cadastro{
     display: flex;
     flex-direction: column;
     background-color: var(--background);
@@ -67,15 +58,12 @@ li{
     border: 3px solid var(--azul);
     border-radius: 10px;
     align-self: center;
-}
-#popup{
+}#popup{
     border: none;
     border-radius: 10px;
-}
-#popup::backdrop{
+}#popup::backdrop{
     background-color: var(--background);
-}
-#nome, #tel, #email{
+}#nome, #tel, #email{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 50px;
@@ -87,11 +75,9 @@ li{
     border-radius: 10px;
     text-align: left;
     outline: none;   
-}
-#nome:focus, #tel:focus, #email:focus{
+}#nome:focus, #tel:focus, #email:focus{
     border-bottom:2px solid var(--azul_hover);
-}
-#buttonsend {
+}#buttonsend {
     border: none;
     background-color: var(--azul);
     color: white;
@@ -100,19 +86,15 @@ li{
     padding-right: 20px;
     border-radius: 5px;
     cursor: pointer;
-}
-#new_contact:hover, #buttonsend:hover{
+}#new_contact:hover, #buttonsend:hover{
     background-color: var(--azul_hover);
-}
-#text{
+}#text{
     font-size: 20px;
     padding-bottom: 3px;
     padding-top: 3px;
-}
-#nome::placeholder, #tel::placeholder, #email::placeholder, #navbar::placeholder{
+}#nome::placeholder, #tel::placeholder, #email::placeholder, #navbar::placeholder{
     font-size: 15px;
-}
-.btneditar, .btnexcluir{
+}.btneditar, .btnexcluir{
     justify-content: right;
     height: 40px;
     width: 100px;
@@ -120,40 +102,32 @@ li{
     cursor: pointer;
     border: none;
     margin-top: 3px;
-}
-.btnexcluir{
+}.btnexcluir{
     background-color: var(--red_excluir);
     border-radius: 5px;
     color: white;
-}
-.btneditar{
+}.btneditar{
     background-color: var(--azul);
     color: white;
     border-radius: 5px;
-}
-.btneditar:hover{
+}.btneditar:hover{
     background-color: var(--azul_hover);   
-}
-.btnexcluir:hover{
+}.btnexcluir:hover{
     background-color: var(--red_hover);
 
-}
-#navbar{
+}#navbar{
     height: 40px;
     border-radius: 5px;
     margin-top: 20px;
-}
-.container{
+}.container{
     display: grid;
     flex-direction: column;
     margin-right: 500px;
-}
-.seletores{
+}.seletores{
     flex-direction: column;
     display: flex;
     margin-top: 30px;  
-}
-.contact{
+}.contact{
     border-bottom: 2px dashed var(--border);
     flex-direction: row;
     display: flex;
@@ -161,8 +135,7 @@ li{
     border: 2px solid var(--border);
     border-radius: 5px;
     max-width: 1000px;
-}
-.msg_error{
+}.msg_error{
     align-self: center;
     color: white;
     font-size: 20px;
@@ -170,17 +143,14 @@ li{
     background-color: var(--red_excluir);
     border-radius: 5px;
     padding: 15px;
-}
-#cls_popup{
+}#cls_popup{
     cursor: pointer;
     background-color: transparent;
     border: 1px solid var(--border);
     border-radius: 5px;
     padding: 3px 20px 3px 20px;
-}
-#cls_popup:hover{
+}#cls_popup:hover{
     background-color: var(--cinza_claro);
-}
-.window_cadastro > #cls_popup{
+}.window_cadastro > #cls_popup{
     align-self: flex-end;
 }
