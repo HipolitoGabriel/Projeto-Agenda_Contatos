@@ -9,6 +9,8 @@ const pesquisa = document.querySelector("#navbar")
 const msg = document.querySelector("#text_error")
 const cls_popup = document.querySelector("#cls_popup")
 
+dados.addEventListener("click", excluir)
+dados.addEventListener("click", editar)
 button.addEventListener("click", open_popup);
 buttonsend.addEventListener("click", verificar)
 popup.addEventListener("keydown", (e) => {
@@ -20,11 +22,6 @@ popup.addEventListener("keydown", (e) => {
 cls_popup.addEventListener("click", () => {
     popup.close()
 }) 
-
-dados.addEventListener("click", excluir)
-dados.addEventListener("click", editar)
-
-const tabelaBody = document.getElementById("corpoTabela"); 
 
 function atualizarTabela(contato, indice) {
     
@@ -56,7 +53,7 @@ function validar_email(email) {
     return email.includes("@") && email.includes(".")
 }
 function validar_num(tel) {
-    return /* /^\(\d{2}\) \d{9}$/.test(tel); */ true
+    return  /^\(\d{2}\) \d{9}$/.test(tel); 
 }
 function verificar() {
     const nome = document.getElementById("nome").value
