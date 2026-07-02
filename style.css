@@ -169,5 +169,18 @@ li{
     padding-bottom: 10px;
     background-color: var(--red_excluir);
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
+}
+#cls_popup{
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 3px 20px 3px 20px;
+}
+#cls_popup:hover{
+    background-color: var(--cinza_claro);
+}
+.window_cadastro > #cls_popup{
+    align-self: flex-end;
 }

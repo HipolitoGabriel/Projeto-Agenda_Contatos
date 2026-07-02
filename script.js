@@ -7,6 +7,7 @@ const dados = document.querySelector(".boxbody")
 const limpar = document.querySelector("#limpar")
 const pesquisa = document.querySelector("#navbar")
 const msg = document.querySelector("#text_error")
+const cls_popup = document.querySelector("#cls_popup")
 
 button.addEventListener("click", open_popup);
 buttonsend.addEventListener("click", verificar)
@@ -16,6 +17,10 @@ popup.addEventListener("keydown", (e) => {
         verificar() 
     }   
 })
+cls_popup.addEventListener("click", () => {
+    popup.close()
+}) 
+
 dados.addEventListener("click", excluir)
 dados.addEventListener("click", editar)
 
