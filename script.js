@@ -53,7 +53,7 @@ function validar_email(email) {
     return email.includes("@") && email.includes(".")
 }
 function validar_num(tel) {
-    return  /^\(\d{2}\) \d{9}$/.test(tel); 
+    return /* /^\(\d{2}\) \d{9}$/.test(tel) */ true; 
 }
 function verificar() {
     const nome = document.getElementById("nome").value
@@ -140,7 +140,9 @@ function excluir(e) {
                 email: novo_email,
                 tel: novo_tel
             }
+            dados.innerHTML = ""
         lista_contatos.forEach((contato) => {
+            
             const contato_filtadro = `
         <div class="contact" data-id="${indice}">
                 <div class="container">
