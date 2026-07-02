@@ -6,6 +6,7 @@ const teste = document.querySelector("#teste")
 const dados = document.querySelector(".boxbody")
 const limpar = document.querySelector("#limpar")
 const pesquisa = document.querySelector("#navbar")
+const msg = document.querySelector("#text_error")
 
 button.addEventListener("click", open_popup);
 buttonsend.addEventListener("click", verificar)
@@ -60,6 +61,9 @@ function verificar() {
         cadastrar(nome, tel, email) 
     }
     if (validar_nome(nome) != true){
+        msg.classList.add("msg_erro")
+        msg.textContent = "nome precisa de no minimo 3 caracteres"
+        
         alert("nome precisa de no minimo 3 caracteres")
     }
     if (validar_num(tel) != true){
@@ -68,7 +72,6 @@ function verificar() {
     if (validar_email(email) != true){
         alert("email precisa ter @ e .")
     }
-
 }
 function cadastrar(nome, tel, email){
     const novo = {
