@@ -1,3 +1,4 @@
+const URL_BASE = "https://6a871e5a70fbbd308f98bace.mockapi.io"
 let lista_contatos = []
 const button = document.querySelector("#new_contact")
 const popup = document.querySelector("#popup")
@@ -23,6 +24,64 @@ popup.addEventListener("keydown", (e) => {
 cls_popup.addEventListener("click", () => {
     popup.close()
 }) 
+async function getDados() {
+    try{
+        const response = await fetch(`${URL_BASE}/contatos`)
+        
+        if(!response.ok){
+            throw new Error("deu erro lindao")
+        }
+        const dados = await response.json()
+        alert(JSON.stringify(dados))
+    }catch(E){
+        console.error("erro:", E)
+    }
+    
+}
+async function del(id) {
+    try{
+        const response = await fetch(`${URL_BASE}/contatos/${id}`, {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"
+            }})
+        
+        if(!response.ok){
+            throw new Error("Erro ao deletar")
+        }
+        console.log(`contato ${id} deletado com sucesso`)
+    }catch(E){
+        console.error("erro:", E)
+    }
+}
+async function atualizar(id, nome, email, telefone) {
+    try{
+        const response = await fetch(`${URL_BASE}/contatos/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(dados)})
+        
+        if(!response.ok){
+            throw new Error("Erro ao deletar")
+        }
+        console.log(`contato ${id} deletado com sucesso`)
+    }catch(E){
+        console.error("erro:", E)
+    }
+}
+async function cadastar(novo) {
+    try{
+        const response = await fetch(`${URL_BASE}/contatos`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(novo)
+        })
+        if(!response.ok){
+            throw new Error("Erro ao criar")
+        }
+    }catch(E){
+        console.error("erro na requisição")
+    }
+}
 function recarregarLista() {
     dados.innerHTML = "";
     lista_contatos.forEach((contato, indice) => {
@@ -49,7 +108,7 @@ function atualizarTabela(contato, indice) {
 }
 function open_popup() {
     popup.showModal()
-}
+} 
 function validar_nome(nome) {
     return nome.length >= 3
 }
@@ -58,7 +117,7 @@ function validar_email(email) {
 }
 function validar_num(tel) {
     return /^\(\d{2}\) \d{9}$/.test(tel)
-}
+} 
 function verificar() {
     const nome = document.getElementById("nome").value
     const tel = document.getElementById("tel").value
@@ -76,7 +135,7 @@ function verificar() {
         forms_clean()
         editar_id = null
         return
-        }
+        } 
     cadastrar(nome, tel, email)
     return
     }
@@ -97,7 +156,7 @@ function cadastrar(nome, tel, email){
         tel
     }
     const id = lista_contatos.length;
-    lista_contatos.push(novo)
+    cadastar(novo)
     atualizarTabela(novo, id)
     popup.close()
     forms_clean()
@@ -132,7 +191,7 @@ function excluir(e) {
         const div_del = click.closest(".contact")
         const id = Number(div_del.dataset.id)
         div_del.remove()
-        lista_contatos.splice(id, 1)
+        del(id)
     }
 }function editar(e) {
     const nome = document.getElementById("nome")
@@ -156,3 +215,4 @@ function forms_clean() {
     document.getElementById("tel").value = ""
     document.getElementById("email").value = ""
 }
+getDados()
