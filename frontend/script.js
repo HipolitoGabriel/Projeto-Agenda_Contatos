@@ -1,4 +1,4 @@
-const URL_BASE = "http://localhost:3000/contatos"
+const URL_BASE = "http://localhost:3000"
 let lista_contatos = []
 const button = document.querySelector("#new_contact")
 const popup = document.querySelector("#popup")
@@ -133,7 +133,7 @@ function validar_email(email) {
 }
 
 function validar_num(tel) {
-    return /^\(\d{2}\) \d{9}$/.test(tel)
+    return /* /^\(\d{2}\) \d{}$/.test(tel) */ true
 } 
 
 function verificar() {
