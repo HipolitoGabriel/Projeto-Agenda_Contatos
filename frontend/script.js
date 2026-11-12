@@ -1,4 +1,4 @@
-const URL_BASE = "https://6a871e5a70fbbd308f98bace.mockapi.io"
+const URL_BASE = "http://localhost:3000/contatos"
 let lista_contatos = []
 const button = document.querySelector("#new_contact")
 const popup = document.querySelector("#popup")
